@@ -7,7 +7,7 @@ def square(x):
     '''
     return x*x
 
-def product(x,y):
+def product(x,y) -> any:
     return x*y
 
 
