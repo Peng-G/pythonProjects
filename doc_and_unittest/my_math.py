@@ -1,13 +1,14 @@
 def square(x):
-    '''
+    """
     >>> square(2)
     4
     >>> square(3)
     9
-    '''
+    """
     return x*x
 
-def product(x,y) -> any:
+
+def product(x, y) -> any:
     return x*y
 
 

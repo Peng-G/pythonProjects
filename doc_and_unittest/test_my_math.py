@@ -1,4 +1,5 @@
-import unittest, my_math
+import unittest
+import my_math
 
 
 class ProductTestCase(unittest.TestCase):
@@ -7,7 +8,6 @@ class ProductTestCase(unittest.TestCase):
             for y in range(-10, 10):
                 p = my_math.product(x, y)
                 self.assertEqual(p, x * y, 'Integer multiplication failed')
-
 
     def test_floats(self):
         for x in range(-10, 10):
