@@ -1,16 +1,15 @@
-'This is a simple database built with shelve.'
+"""This is a simple database built with shelve."""
 
 import shelve
+
 
 def store_person(data_base):
     'input data and store to a shelf object'
 
     pid = input('Enter unique ID number: ')
-    person = {}
-    person['name'] = input('Enter name: ')
-    person['age'] = input('Enter age: ')
-    person['phone'] = input('Enter phone number: ')
+    person = {'name': input('Enter name: '), 'age': input('Enter age: '), 'phone': input('Enter phone number: ')}
     data_base[pid] = person
+
 
 def lookup_person(data_base):
     'lookup an object with id or other information'
@@ -20,6 +19,7 @@ def lookup_person(data_base):
     field = field.strip().lower()
     print(field.capitalize() + ':', data_base[pid][field])
 
+
 def print_help():
     'show help information'
     print('The available commands are:')
@@ -28,15 +28,17 @@ def print_help():
     print('quit : Save changes and exit')
     print('? : Prints this message')
 
+
 def enter_command():
     'show basic input instructions to user'
     cmd = input('Enter command (? for help): ')
     cmd = cmd.strip().lower()
     return cmd
 
+
 def main():
-    'basic workflow'
-    database = shelve.open('D:\\database.dat') # filepath could be modified.
+    """basic workflow"""
+    database = shelve.open('D:\\database.dat')  # filepath could be modified.
     try:
         while True:
             cmd = enter_command()
@@ -50,6 +52,7 @@ def main():
                 return
     finally:
         database.close()
+
 
 if __name__ == '__main__':
     main()
